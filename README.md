@@ -4,7 +4,11 @@ CI/CD Workflow POC for Dev Code Deployment
 ## About
 
 This POC is a working model for code deployment (XHPL) to baremetal computes for the 
-purpose of hardware QA in HPC environments.
+purpose of hardware QA in HPC environments. It uses my other repos: 
+[engcommon](JustAddRobots-deployxhpl-v1-Outlines.svg), 
+[runxhpl](https://github.com/JustAddRobots/runxhpl), 
+[runkubejobs](https://github.com/JustAddRobots/runkubejobs), and 
+[xhplconsole-api](https://github.com/JustAddRobots/xhplconsole-api).
 
 ![Workflow-POC](./JustAddRobots-deployxhpl-v1-01.svg)
 
