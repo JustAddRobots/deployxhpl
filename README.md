@@ -10,18 +10,18 @@ purpose of hardware QA in HPC environments. It uses my other repos:
 [runkubejobs](https://github.com/JustAddRobots/runkubejobs), and 
 [xhplconsole-api](https://github.com/JustAddRobots/xhplconsole-api).
 
-![Workflow-POC](./JustAddRobots-deployxhpl-v1-01.svg)
+![Workflow-POC](./JustAddRobots-deployxhpl-v1-02.svg)
 
 ## Background
 
 Since this project is intended for deployment to baremetal, parts of the workflow
-are theoretically gated by hardware. In particular a Kubernetes cluster can have
+are theoretically gated by hardware. In particular, a Kubernetes cluster can have
 different hardware platforms for testing various XHPL builds (AVX2, AVX512, etc.). 
-Though, currently this example deploys an unoptimised XHPL build to a K8S VM cluster.
+Currently this example deploys an unoptimised XHPL build to a K8S VM cluster.
 
 Also at an institutional level, the workflow should have a single, accessible place
-for INI configuration, as well as manual build/deployment options in the event of an
-extended build server outage.
+for INI configuration, as well as manual build/deployment options in the event of a
+build server outage.
 
 Thus the following requirements:
 
@@ -43,6 +43,28 @@ Based on the above requirements, the following are implemented:
 
 ## Workflow in Action
 
+### 01 Release candidate build/deploy
+
+* git push
+* docker build
+* runkubejobs (runxhpl on k8s)
+
+![RC deploy](./deployxhpl-clip-01-800x450.gif) 
+
+### 02 Check output
+
+* local runxhpl logs
+* SQL DB
+* xhplconsole-api
+
+![Check logs](./deployxhpl-clip-02-800x450.gif)
+
+### 03 Release
+
+* release
+* pull request/merge
+
+![Release](./deployxhpl-clip-03-800x450.gif)
 
 ## Todo
 
