@@ -35,15 +35,14 @@ Thus the following requirements:
 Based on the above requirements, the following are implemented:
 
 * Gitflow Workflow w/ SemVer Container Tagging
-* Jenkins Multibranch Pipeline
+* Jenkins Multibranch Pipeline with Slack Integration
 * Automatic Test Upload to SQL DB via REST API
-* Manual Docker Build with Makefile (Failsafe)
-* Manual Kubernetes Deployment w/ runkubejobs Package (Failsafe)
+* Manual Build with Makefile / Deploy with runkubejobs (Failsafe)
 
 
 ## Workflow in Action
 
-### 01 Release candidate build/deploy
+### 01 - Release candidate build/deploy
 
 * git push
 * docker build
@@ -51,7 +50,7 @@ Based on the above requirements, the following are implemented:
 
 ![RC deploy](./deployxhpl-clip-01-800x450.gif) 
 
-### 02 Check output
+### 02 - Check output
 
 * local runxhpl logs
 * SQL DB
@@ -59,7 +58,7 @@ Based on the above requirements, the following are implemented:
 
 ![Check logs](./deployxhpl-clip-02-800x450.gif)
 
-### 03 Release
+### 03 - Release
 
 * release
 * pull request/merge
